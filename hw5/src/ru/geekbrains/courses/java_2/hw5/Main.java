@@ -1,6 +1,5 @@
 package ru.geekbrains.courses.java_2.hw5;
 
-import sun.plugin.javascript.navig.Array;
 
 import java.util.Arrays;
 
