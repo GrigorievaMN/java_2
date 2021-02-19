@@ -47,6 +47,7 @@ public class Server {
                 }
 
             });
+            threadInput.setDaemon(true);
             threadInput.start();
 
             Thread threadOut = new Thread(new Runnable() {

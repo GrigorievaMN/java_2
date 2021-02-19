@@ -44,6 +44,7 @@ public class Client {
                 }
 
             });
+            threadInput.setDaemon(true);
             threadInput.start();
 
             Thread threadOut = new Thread(new Runnable() {
