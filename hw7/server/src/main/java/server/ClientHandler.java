@@ -61,8 +61,17 @@ public class ClientHandler {
                             out.writeUTF(Command.END);
                             break;
                         }
+                        if (str.startsWith(Command.DIRECT)) {
+                            String[] msg = str.split("\\s", 3);
+                            if (msg.length < 3) {
+                                continue;
+                            }
+                            server.directMsg(this,msg[1], msg[2]);
+                        } else {
 
-                        server.broadcastMsg(this, str);
+                            server.broadcastMsg(this, str);
+                        }
+
                     }
                 } catch (RuntimeException e) {
                     System.out.println(e.getMessage());

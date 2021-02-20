@@ -59,6 +59,16 @@ public class Server {
         }
     }
 
+    public void directMsg(ClientHandler sender,String directNik, String msg){
+        String message = String.format("[ %s ]: %s", sender.getNickname(), msg);
+        for (ClientHandler c : clients) {
+            if(directNik.equals(c.getNickname()) || c.getNickname() == sender.getNickname()) {
+                c.sendMsg(message);
+            }
+        }
+    }
+
+
     public void subscribe(ClientHandler clientHandler){
         clients.add(clientHandler);
     }
